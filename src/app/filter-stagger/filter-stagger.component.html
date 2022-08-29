@@ -1,0 +1,24 @@
+<div>
+    <form>
+      <mat-form-field style="margin: 1em">
+        <input
+          matInput
+          #criteria
+          (input)="updateCriteria(criteria.value)"
+          placeholder="Filter Characters..."
+        />
+      </mat-form-field>
+    </form>
+  
+    <mat-list [@filterAnimation]="characters?.length">
+      <mat-list-item *ngFor=" let character of characters">
+        <img
+          mat-list-avatar
+          [src]="character.avatar"
+          [alt]="character.name | lowercase"
+        />
+        <h3 mat-line>{{ character.name | uppercase }}</h3>
+        <span mat-line>{{ character.gender }} - {{ character.birth_year }}</span>
+      </mat-list-item>
+    </mat-list>
+  </div>

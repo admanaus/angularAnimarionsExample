@@ -1,0 +1,21 @@
+<nav>
+    <button mat-raised-button (click)="toggleFade()">Toggle Fade Insert/Remove</button>
+</nav>
+<nav>
+    <button mat-raised-button (click)="toggleSlide()">Toggle Slide Insert/Remove</button>
+</nav>
+<!-- <nav>
+    <button mat-raised-button (click)="toggleBlue()">Toggle Keyframe</button>
+</nav> -->
+  
+<div @myFadeInsertRemoveTrigger *ngIf="isShownFade" class="insert-remove-container">
+    <p>The box is inserted</p>
+</div>
+
+<div @mySlideInsertRemoveTrigger *ngIf="isShownSlide" class="insert-remove-container">
+    <p>The box is inserted</p>
+</div>
+
+<!-- <div [@myBlueKeyFrameTrigger]="isBlue ? 'blue' : 'orange'" class="insert-remove-container">
+    <p>The box is a color.</p>
+</div> -->
